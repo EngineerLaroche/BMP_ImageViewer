@@ -1,4 +1,4 @@
-package vue;
+package view;
 
 /**************************************************************
  * @CLASS_TITLE:	Application
