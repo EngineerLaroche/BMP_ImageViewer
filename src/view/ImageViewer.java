@@ -58,7 +58,7 @@ public class ImageViewer extends JFrame implements ActionListener {
 		
 		tabs = new JTabbedPane();
 		this.add(tabs);
-		this.setSize(800,600);
+		this.setSize(1024,768);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

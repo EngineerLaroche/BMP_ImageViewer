@@ -38,7 +38,7 @@ public class CompileImage extends Image {
 	ENTETE_OCTET_40 = 40;
 
 	private static final String
-	BIT_MAP = "BMP",
+	BIT_MAP = "BM",
 	ERROR_BPP = "*** L'image Bitmap sélectionnée n'est pas 24 bits par pixel ***",
 	ERROR_BITMAP = "*** L'image sélectionnée n'est pas de format Bitmap ***",
 	ERROR_ENTETE = "*** L'entête de l'image sélectionnée ne respecte pas 40 octets ***",
