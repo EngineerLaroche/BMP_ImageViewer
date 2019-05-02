@@ -9,27 +9,45 @@ import model.CompileImage;;
  * @CLASS_TITLE:	Concrete Factory
  * 
  * @Description: 	Classe presque identique a celle de ProxyFactory
+ * 					Voir classe ProxyFactory.
  * 
  * @author:			Alexandre Laroche
  * 
  **************************************************************/
 public class ConcreteFactory implements ImageFactory{
 
-	/* Instance de la classe ConcreteFactory (singleton) */
-	private static ConcreteFactory _instance = null;
+	/*****************************
+	 * Class Instances (Singleton)
+	 *****************************/
+	private static ConcreteFactory instance = null;
 
+	/******************************************************
+	 * Build
+	 * 
+	 * @Resumer:	Initialise la construction de l'image
+	 * 				importée (BMP).
+	 * 
+	 * @Return 		Image compilée
+	 * 
+	 ******************************************************/
 	@Override
 	public Image build(File file) throws IOException{
 		return new CompileImage(file);
 	}
 
-	/**
-	 * Creation d'une nouvelle instance de la classe ConcreteFactory si elle est inexistente.
-	 * @return instance de la classe ConcreteFactory
-	 */
+	/******************************************************
+	 * Get Instance	(Singleton)
+	 * 
+	 * @Resumer:	Creation d'une nouvelle instance de la 
+	 * 				classe ConcreteFactory si elle est 
+	 * 				inexistente.
+	 * 
+	 * @return 		Instance de la classe ConcreteFactory
+	 * 
+	 ******************************************************/
 	public static ImageFactory getInstance(){
-		if(_instance == null)
-			_instance = new ConcreteFactory();
-		return _instance;
+		if(instance == null)	
+			instance = new ConcreteFactory();
+		return instance;
 	}
 }

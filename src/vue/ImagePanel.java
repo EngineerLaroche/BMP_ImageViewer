@@ -53,6 +53,8 @@ public class ImagePanel extends JPanel {
 	 * @Resumer:	Fonction qui permet de dessiner l'image
 	 * 				sur un panneau.
 	 * 
+	 * @param		Graphics
+	 * 
 	 ******************************************************/
 	public void paint(Graphics g) {
 		int x, y;
@@ -72,7 +74,7 @@ public class ImagePanel extends JPanel {
 				y = (this.getHeight() - image.getHeight()) / 2;
 				this.setBounds(x,y,image.getWidth(),image.getHeight());
 				
-				//Dessine l'image
+				//Dessine l'image sur la panneau
 				g.drawImage(buffer,x,y,Color.BLACK,null);
 			}
 		}

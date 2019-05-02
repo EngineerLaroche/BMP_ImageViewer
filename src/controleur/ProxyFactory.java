@@ -8,35 +8,54 @@ import model.ProxyImage;
 /**************************************************************
  * @CLASS_TITLE:	Proxy Factory
  * 
- * @Description: 	
+ * @Description: 	Classe presque identique a celle de ConcreteFactory
+ * 					Voir classe COncreteFactory.
  * 
  * @author:			Alexandre Laroche
  * 
  **************************************************************/
 public class ProxyFactory implements ImageFactory {
 	
-	/** Singleton instance to the ProxyFactory */
-	private static ImageFactory _instance = null;
+	/*****************************
+	 * Interface Instance (Singleton)
+	 *****************************/
+	private static ImageFactory instance = null;
 	
-	/** Hides the constructor from outside the class. */
+	/******************************************************
+	 * Constructeur - ProxyFactory
+	 * 
+	 * @Resumer:	Cache le constructeur en dehors de 
+	 * 				la classe.
+	 * 
+	 ******************************************************/
 	private ProxyFactory() {};
 	
-	/*
-	 *  (non-Javadoc)
-	 * @see controller.ImageFactory#build(java.io.File)
-	 */
+	/******************************************************
+	 * Build
+	 * 
+	 * @Resumer:	Initialise la construction Proxy de 
+	 * 				l'image importée (BMP).
+	 * 
+	 * @Return 		Image compilée
+	 * 
+	 ******************************************************/
 	public Image build(File file) {
 		return new ProxyImage(file);
 	}
 	
-	/**
-	 * Creates a new instance of the ProxyFactory class if none exist.
-	 * @return The well-known instance of the ProxyFactory class.
-	 */
+	/******************************************************
+	 * Get Instance	(Singleton)
+	 * 
+	 * @Resumer:	Creation d'une nouvelle instance de la 
+	 * 				classe ProxyFactory si elle est 
+	 * 				inexistente.
+	 * 
+	 * @return 		Instance de la classe ProxyFactory
+	 * 
+	 ******************************************************/
 	public static ImageFactory getInstance() {
-		if(_instance == null)
-			_instance = new ProxyFactory();
-		return _instance;
+		if(instance == null)
+			instance = new ProxyFactory();
+		return instance;
 	}
-
 }

@@ -21,7 +21,7 @@ import model.Image;
 public interface ImageFactory {
 
 	/******************************************************
-	 * Constructeur - Image Panel
+	 * Build	(abstract)
 	 * 
 	 * @Resumer:	Créé une nouvelle instance d'image concrète 
 	 * 				à l'aide du descripteur de fichier.

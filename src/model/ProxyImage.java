@@ -14,8 +14,8 @@ import controleur.ConcreteFactory;
  * 					between the actual Image and the object using 
  * 					the Image. As long as the Image doesn't need 
  * 					to be drawn, the ProxyImage will sent information 
- * 					to the caller (false one in most cases, but it is 
- * 					better than a NullPointerException).
+ * 					to the caller (false one in most cases, but it 
+ * 					is better than a NullPointerException).
  * 
  * @author:			Alexandre Laroche
  * 
@@ -54,10 +54,9 @@ public class ProxyImage extends Image {
 		concrete = ConcreteFactory.getInstance().build(super._file);
 		
 		//Si l'image n'est pas créée, on en instancie une.
-		if (concrete != null)
-			return concrete.draw();
+		if (concrete != null)	return concrete.draw();
 		
-		//Si l'image n'a pas pu être créée pour une raison quelconque, retourne null
+		//Si l'image n'a pas pu être créée , retourne null
 		return null;
 	}
 
