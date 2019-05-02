@@ -13,3 +13,8 @@ Le démarrage de l'application se fait à partir de la classe "Application" dans
 ## Entête d'une image Bitmap
 
 http://atlc.sourceforge.net/bmp.html
+
+## Auteur
+
+- Nom:   Alexandre Laroche
+- Date:  Automne 2017
