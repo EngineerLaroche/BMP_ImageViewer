@@ -3,56 +3,41 @@ package model;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
-/**************************************************************
- * @CLASS_TITLE:	Image	(Abstract class)
+/**
+ * The Image abstract class defines pure abstract methods that must be
+ * redefined by the specialized class. All Images share one common attribute
+ * that can only be store the same way : the pointer to the file handle. All
+ * other attributes can be implemented differently.
  * 
- * @Description: 	La classe abstraite Image définit des 
- * 					méthodes abstraites pures qui doivent être 
- * 					redéfinies par la classe spécialisée. 
- * 					Toutes les images partagent un attribut 
- * 					commun qui ne peut être stocké que de la 
- * 					même manière: le pointeur sur le descripteur 
- * 					de fichier. Tous les autres attributs peuvent 
- * 					être implémentés différemment. 
- * 					Voir classe ProxyImage.
+ * @author Alexandre Laroche
  * 
- * @author:			Alexandre Laroche
+ * @see ProxyImage
  * 
- **************************************************************/
+ * @author François Caron <francois.caron.7@ens.etsmtl.ca>
+ */
 public abstract class Image {
 
-	/*****************************
-	 * Class Instances
-	 *****************************/
+	/** The handle to the image file */
 	protected File _file;
 	
-	/******************************************************
-	 * Paint
-	 * 
-	 * @Resumer:	Créez un objet BufferedImage pour qu'il 
-	 * 				corresponde aux exigences RGB de l'écran.
-	 * 
-	 * @return		Le fichier image
-	 * @throws 		IOException 
-	 * 
-	 ******************************************************/
+	/**
+	 * Create a BufferedImage object to match the display's RGB requirements. 
+	 * @return A BufferedImage representing the image file, or null if
+	 * something went wrong.
+	 * @throws IOException 
+	 */
 	public abstract BufferedImage draw() throws IOException;
 	
-	/***************************
-	 * Get Height
+	/**
 	 * 
-	 * @return: Hauteur image
-	 * 
-	 ***************************/
+	 * @return The Image's height
+	 */
 	public abstract int getHeight();
 	
-	/***************************
-	 * Get Width
+	/**
 	 * 
-	 * @return: Largeur image
-	 * 
-	 ***************************/
+	 * @return The Image's width
+	 */
 	public abstract int getWidth();
 	
 	
